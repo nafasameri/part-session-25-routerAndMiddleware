@@ -1,4 +1,6 @@
 const Product = require('../models/productModel');
+const logger = require('log4js').getLogger();
+logger.level = 'debug';
 
 async function getProducts(req, res) {
     try {
@@ -10,7 +12,7 @@ async function getProducts(req, res) {
             res.end(JSON.stringify(products));
         }
     } catch (e) {
-        console.log(e);
+        logger.error(e);
     }
 }
 
@@ -25,7 +27,7 @@ async function getProduct(req, res, id) {
             res.end(JSON.stringify(product))
         }
     } catch (error) {
-        console.log(error)
+        logger.error(error)
     }
 }
 
@@ -40,7 +42,7 @@ async function createProduct(req, res, data) {
             res.end(JSON.stringify(productId))
         }
     } catch (error) {
-        console.log(error)
+        logger.error(error)
     }
 }
 

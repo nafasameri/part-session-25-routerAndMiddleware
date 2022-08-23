@@ -16,7 +16,7 @@ function findById(id) {
 function add(data) {
     return new Promise((resolve, reject) => {
         products.push(data);
-        resolve(product.id);
+        resolve(data?.id);
     });
 }
 

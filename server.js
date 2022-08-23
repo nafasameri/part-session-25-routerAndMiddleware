@@ -8,7 +8,7 @@ const Router = new RouterClass();
 Router.addRoute('/sampleGET', getProducts, 'get').middleware([fetchQueryStringFromURL, validate, sampleMiddleware]);
 Router.addRoute('/samplePOST', getProducts, 'post').middleware(fetchQueryStringFromURL);
 
-Router.addRoute('/createProductsPOST', createProduct, 'post').middleware(fetchQueryStringFromURL);
+Router.addRoute('/createProducts', createProduct, 'post').middleware(fetchQueryStringFromURL);
 Router.addRoute('/updateProductPUT', getProducts, 'put').middleware(fetchQueryStringFromURL);
 
 
