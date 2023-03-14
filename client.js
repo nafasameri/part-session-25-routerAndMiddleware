@@ -5,7 +5,7 @@ logger.level = 'debug';
 const req = http.request({
     hostname: 'localhost',
     port: process.env.port || 5000,
-    path: '/sampleGET',
+    path: '/getProducts',
     method: 'GET',
 }, (res) => {
     // res.on('data', (chunk) => {

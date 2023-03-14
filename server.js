@@ -5,11 +5,11 @@ const { fetchQueryStringFromURL, validate, sampleMiddleware } = require('./middl
 
 const RouterClass = require('./Router');
 const Router = new RouterClass();
-Router.addRoute('/sampleGET', getProducts, 'get').middleware([fetchQueryStringFromURL, validate, sampleMiddleware]);
-Router.addRoute('/samplePOST', getProducts, 'post').middleware(fetchQueryStringFromURL);
+Router.addRoute('/getProducts', getProducts, 'get').middleware([fetchQueryStringFromURL, validate, sampleMiddleware]);
+// Router.addRoute('/getProducts', getProducts, 'post').middleware(fetchQueryStringFromURL);
 
-Router.addRoute('/createProducts', createProduct, 'post').middleware(fetchQueryStringFromURL);
-Router.addRoute('/updateProductPUT', getProducts, 'put').middleware(fetchQueryStringFromURL);
+Router.addRoute('/createProduct', createProduct, 'post').middleware(fetchQueryStringFromURL);
+Router.addRoute('/updateProduct', getProducts, 'put').middleware(fetchQueryStringFromURL);
 
 
 const server = http.createServer((req, res) => {
